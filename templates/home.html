@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request for Clean </title>
+</head>
+  <style>
+  .container{
+   border: 1px solid #73AD21;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+  }
+    /* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+
+
+<body style="background-color:RGB(223, 207, 190);">
+
+
+
+<br><br>
+<h1><center>Request for cleaning !</center></h1>
+<br>
+<!--
+<div class ='center'>
+    <form action="{% url 'send_mail' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" placeholder="Put Your name">
+        </div>
+        <div>
+            <label for="sbj">Subject:</label>
+            <input id="sbj" name="subject" type="text" placeholder="Put Your subject">
+        </div>
+        <div>
+            <label for="msg">Message:</label>
+            <input id="msg" name="message" type="text" placeholder="Put Your message">
+        </div>
+
+        <div>
+            <lebel for="file">Photograph of the place : </lebel>
+        <input type="file" id="myFile" name="filename">
+        <input type="file" id="myFile2" name="filename2">
+        </div>
+        <input type="submit", value="Send Mail">
+
+    </form>
+</div>
+
+-->
+
+<div class="container">
+  <form action="{% url 'send_mail' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Name : </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="contact no">Email/Phone : </label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="contact no" name="contact no"  placeholder="Your Contact info..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="place">Location</label>
+      </div>
+      <div class="col-75">
+        <select id="place" name="place">
+          <option value="Administrative Building">Administrative Building</option>
+          <option value="Academic Building 1 ">Academic Building 1 </option>
+          <option value="Academic Building 2">Academic Building 2 </option>
+            <option value="Old Boys Hostel">Old Boys Hostel </option>
+            <option value="New Boys Hostel">New Boys Hostel</option>
+            <option value="Girls Hostel 1">Girls Hostel 1</option>
+            <option value="Girls Hostel 2">Girls Hostel 2</option>
+
+
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Specify the Location </label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Please specify the location with floor and room no " style="height:200px"></textarea>
+      </div>
+    </div>
+
+      <div class="row">
+      <div class="col-25">
+        <label for="file"> Photograph of the place : </label>
+      </div>
+      <div class="col-75">
+        <input type="file" id="file" name="file"  >
+          <input type="file" id="file2" name="file2">
+      </div>
+<br>
+
+    <div class="row">
+
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+
+
+
+</div>
+<br>
+<br>
+
+</body>
+
+</html>
