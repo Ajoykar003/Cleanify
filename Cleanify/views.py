@@ -36,7 +36,7 @@ def send_gmail(request):
 
             # (file.name, file.read()),
             'cleanifypgec@gmail.com',
-            ['souviksingh2@gmail.com'],
+            ['ajkpgec@gmail.com'],
         )
         msg.attach(file.name, file.read(), file.content_type)
         msg.attach(file1.name, file1.read(), file1.content_type)
@@ -56,7 +56,7 @@ def send_email(request):
         'Feedback from ' + name,
         subject,
         'cleanifypgec@gmail.com',
-        ['souviksingh2@gmail.com'],
+        ['ajkpgec@gmail.com'],
         fail_silently=False,
     )
 
