@@ -26,5 +26,5 @@ six==1.16.0
 SQLAlchemy==1.4.35
 sqlparse==0.4.2
 tzdata==2021.5
-view==none
+view==0.0
 Werkzeug==2.1.1
